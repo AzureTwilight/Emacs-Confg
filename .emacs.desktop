@@ -1,0 +1,228 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Nov  9 01:05:17 2016
+;; Desktop file format version 206
+;; Emacs version 24.5.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22562 48285 298426 750000) (desktop . "206") "yqh@yqh-local-machine" nil nil ((((font-backend xft x) (font . "-CTDB-Fira Mono Medium for Powerline-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1") (font-parameter . "Fira Mono Medium for Powerline") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 10) (right-fringe . 10) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "gray") (environment "COLORTERM=gnome-terminal" "XAUTHORITY=/run/user/1000/gdm/Xauthority" "GTK_IM_MODULE=fcitx" "DISPLAY=:0" "ALTERNATE_EDITOR=" "XDG_RUNTIME_DIR=/run/user/1000" "INFINALITY_FT_GLOBAL_EMBOLDEN_X_VALUE=0" "WINDOWPATH=1" "INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/INFO:/usr/local/texlive/2016/texmf-dist/doc/INFO:" "INFINALITY_FT_AUTOHINT_INCREASE_GLYPH_HEIGHTS=false" "INFINALITY_FT_STEM_FITTING_STRENGTH=0" "QT4_IM_MODULE=fcitx" "XDG_DATA_DIRS=/usr/share/awesome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop" "DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-1HEfAQWes3,guid=d16d5aa84270c1ef7733cdc858140b3c" "LOGNAME=yqh" "XDG_SESSION_DESKTOP=awesome" "INFINALITY_FT_GLOBAL_EMBOLDEN_Y_VALUE=0" "LESS=-R" "MATHEMATICA_HOME=/usr/local/Wolfram/Mathematica/11.0" "INFINALITY_FT_BOLD_EMBOLDEN_Y_VALUE=0" "_JAVA_AWT_WM_NONREPARENTING=1" "XDG_SEAT=seat0" "HOME=/home/yqh" "SHLVL=2" "LESSCHARSET=utf-8" "GDMSESSION=awesome" "INFINALITY_FT_AUTOHINT_SNAP_STEM_HEIGHT=0" "INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=0" "INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH=0" "INFINALITY_FT_WINDOWS_STYLE_SHARPENING_STRENGTH=0" "INFINALITY_FT_STEM_SNAPPING_SLIDING_SCALE=0" "MANDATORY_PATH=/usr/share/gconf/awesome.mandatory.path" "INFINALITY_FT_USE_KNOWN_SETTINGS_ON_SELECTED_FONTS=false" "INFINALITY_FT_FILTER_PARAMS=11 22 38 22 11" "LANG=en_US.UTF-8" "EDITOR=vim" "XMODIFIERS=@im=fcitx" "HOMEBREW_GITHUB_API_TOKEN=5c853f4cc902fb46398eabf2df13c38374683fd3" "PWD=/home/yqh/.config/awesome" "XDG_SESSION_TYPE=x11" "QT_IM_MODULE=fcitx" "_=/usr/bin/emacsclient" "PATH=/home/yqh/bin:/home/yqh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" "DESKTOP_SESSION=awesome" "XDG_CONFIG_DIRS=/etc/xdg/xdg-awesome:/etc/xdg" "INFINALITY_FT_GAMMA_CORRECTION=1000 80" "LSCOLORS=Gxfxcxdxbxegedabagacad" "PAGER=less" "DEFAULTS_PATH=/usr/share/gconf/awesome.default.path" "USERNAME=yqh" "INFINALITY_FT_BRIGHTNESS=-10" "INFINALITY_FT_USE_VARIOUS_TWEAKS=true" "INFINALITY_FT_FRINGE_FILTER_STRENGTH=0" "SSH_AUTH_SOCK=/tmp/ssh-dlKuRmQGhJkR/agent.1382" "QT_ACCESSIBILITY=1" "USER=yqh" "INFINALITY_FT_GRAYSCALE_FILTER_STRENGTH=0" "ZSH=/home/yqh/.oh-my-zsh" "LC_ALL=en_US.UTF-8" "INFINALITY_FT_CONTRAST=15" "WINDOWID=25165827" "QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1" "SHELL=/usr/bin/zsh" "INFINALITY_FT_AUTOHINT_VERTICAL_STEM_DARKEN_STRENGTH=25" "INFINALITY_FT_BOLD_EMBOLDEN_X_VALUE=0" "TERM=xterm-256color" "AUTOJUMP_SOURCED=1" "CLUTTER_IM_MODULE=xim" "IBUS_DISABLE_SNOOPER=1" "TERMINATOR_UUID=urn:uuid:a60f7718-4bb4-41fd-8cc6-4f2f8bec3baf" "XDG_SESSION_ID=1" "SSH_AGENT_PID=1533" "ORBIT_SOCKETDIR=/tmp/orbit-yqh" "MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:/usr/local/texlive/2016/texmf-dist/doc/man:" "XDG_VTNR=1" "INFINALITY_FT_AUTOHINT_HORIZONTAL_STEM_DARKEN_STRENGTH=10" "AUTOJUMP_ERROR_PATH=/home/yqh/.local/share/autojump/errors.log") (powerline-cache) (client) (frameset--id . "457D-4531-60E7-27C2") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (visibility . t) (display . ":0") (explicit-name) (sticky) (height . 45) (width . 93) (left . 960) (top . 20)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 92) (min-pixel-width . 100) (min-pixel-height-ignore . 46) (min-pixel-width-ignore . 40) (min-pixel-height-safe . 23) (min-pixel-width-safe . 20)) leaf (pixel-width . 958) (pixel-height . 1015) (total-width . 95) (total-height . 44) (normal-height . 1.0) (normal-width . 1.0) (buffer "FermionBag2D-Papers-Notes.org" (selected . t) (hscroll . 0) (fringes 10 10 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 4511) (start . 2671))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("theme" "mate" "linum" "line-num" "auctexi" "auctex" "yas" "dired+" "o" "yasnippet" "powerline" "view" "View" "guide" "guide-keykkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" "latex-previewj"))
+(setq regexp-search-ring '("\\<generic\\>" "KN" "span" "vicious" "add-lit" "PhysRevLetter" "rules" "restart" "mysystemmenu" "reboot" "mysystem" "mysyt" "reboot" "319" "4.59" "tile"))
+(setq register-alist nil)
+(setq file-name-history '("~/.config/awesome/modules/" "~/Dropbox/Personal Notes/My-Agenda.org" "~/Dropbox/00-Research/" "~/.emacs" "/home/yqh/Dropbox/00-Research/FermionBag2D/Notes/FermionBag2D-Papers-Notes.org" "/home/yqh/Dropbox/00-Research/FermionBag2D/References/FermionBag2D-Papers-Notes.org" "/home/yqh/Dropbox/00-Research/FermionBag2D/Notes/FermionBag2D-Papers-Notes.org" "~/.emacs.d/org-conf.el" "/home/yqh/Dropbox/00-Research/FermionBag2D/Notes/FermionBag2D-Papers-Notes.org" "~/Dropbox/Personal Notes/Food-List.org" "/home/yqh/Dropbox/00-Research/00-Research-Notes/FermionBag2D-Papers-Notes.org" "/home/yqh/.config/awesome/rc.lua" "~/.config/awesome/rc.lua" "/home/yqh/RAMDisk/newplot.c" "/home/yqh/RAMDisk/4.html" "~/Dropbox/Fa16/PHYS-701/PHYS-701-Homework/PHYS-701-HW-5/PHYS-701-HW-5-Notes.org" "~/Dropbox/Fa16/PHYS-701/" "~/Dropbox/Fa16/PHYS-721/PHYS 721 Homework/PHYS-721-HW-6/PHYS-721-HW-6-Notes.org" "~/Dropbox/Fa16/PHYS-721/PHYS 721 Homework/" "/home/yqh/Dropbox/Fa16/PHYS-721/PHYS 721 Homework/PHYS-721-HW-6/#PHYS-721-HW-6-Notes.org#" "~/RAMDisk/newplot.c" "~/RAMDisk/" "/home/yqh/.config/awesome/awful/layout/suit/center.lua" "/home/yqh/.config/awesome/awful/layout/suit/mytile.lua" "/home/yqh/.config/awesome/awful/layout/suit/init.lua" "~/.config/awesome/rc.lua" "/home/yqh/.config/awesome/awful/layout/suit/tile_extra.lua" "/home/yqh/.config/awesome/awful/layout/suit/tile.lua" "~/.config/awesome/awful/menu.lua" "~/.config/awesome/awful/tag.lua" "/home/yqh/.config/awesome/awful/rules.lua" "~/Dropbox/Fa16/PHYS 711/UNC-levyb/file-index.html" "/home/yqh/Dropbox/Fa16/PHYS 711/UNC-levyb/index.html" "~/Dropbox/Personal Notes/Time-Tracking.org" "/home/yqh/.local/bin/mendeley" "/home/yqh/RAMDisk/2-Add-Two-Numbers/2-Add-Two-Numbers.py" "/home/yqh/RAMDisk/1-two-sum/1-two-sum.py" "/home/yqh/.config/awesome/awful/layout/suit/init.lua" "/home/yqh/RAMDisk/newsbeuter-2.9/doc/example-bookmark-plugin.sh" "~/.config/newsbeuter/config" "~/RAMDisk/arXiv.py" "/home/yqh/RAMDisk/Arxiv.py" "~/.config/newsbeuter/urls" "~/Dropbox/Personal Notes/Food-List.org" "~/Dropbox/Personal Notes/Linux Notes.org" "~/.config/awesome/themes/theme.lua" "~/.config/awesome/themes/#theme.lua#" "/home/yqh/Downloads/Simons-QCMFT/tp3.html" "~/Downloads/Simons-QCMFT/list" "/home/yqh/Downloads/Simons-QCMFT/tp3.html" "~/.emacs.d/org-conf.el" "/home/yqh/RAMDisk/Zenburn-for-Terminator/config" "/home/yqh/.config/terminator/config" "~/.config/awesome/modules/myfunctions.lua" "~/.config/awesome/rc.lua" "/home/yqh/.local/Scripts/tpb.sh" "~/.zshrc" "~/Develop/msjche/dotfiles_laptop/Scripts/tpb.sh" "/home/yqh/Develop/msjche/dotfiles_laptop/.zshrc" "/home/yqh/.config/newsbeuter/config" "~/Develop/msjche/dotfiles_laptop/.local/share/" "~/Develop/msjche/dotfiles_desktop/.local/" "~/Develop/msjche/dotfiles_desktop/.local/share/luakit/scripts/" "~/Develop/msjche/dotfiles_desktop/Scripts/steam.sh" "/home/yqh/Develop/msjche/dotfiles_laptop/Scripts/steam.sh" "~/.config/awesome/modules/volume.lua" "/usr/share/awesome/lib/awful/prompt.lua" "/usr/share/awesome/lib/awful/widget/prompt.lua" "/home/yqh/Develop/msjche/dotfiles_desktop/Scripts/ytdl-helper.sh" "/home/yqh/.local/Scripts/awm-change-wallpaper.sh" "~/.emacs.d/org-conf.el" "~/Dropbox/Personal Notes/Food-List.org" "~/Dropbox/Personal Notes/Linux Notes.org" "~/Dropbox/Personal Notes" "~/Dropbox/" "/home/yqh/.local/bin/punzip" "/home/yqh/.gitignore" "~/.conky/HUD/conkyrcr" "~/.conky/HUD/conkyrcl" "/home/yqh/.conky/HUD/conkyrcc" "/home/yqh/.conky/HUD/conkyrcl" "/home/yqh/.conky/HUD/conkyrcr" "/home/yqh/.conky/HUD/conkyrcr.DANGER" "/home/yqh/.conky/HUD/conkyrcr.safe" "/home/yqh/.local/Scripts/start_HUD.sh" "~/Develop/msjche/dotfiles_laptop/.conky/HUD/" "~/Develop/msjche/AwesomeWM_Laptop/PROFILES/msjche/rc.lua" "~/Develop/msjche/" "/home/yqh/.zshrc" "~/Develop/msjche/dotfiles_laptop/Scripts/blocklist.sh" "/home/yqh/Develop/msjche/dotfiles_laptop/.zshrc" "~/.emacs" "~/.config/awesome/themes/theme.lua" "~/Dropbox/Fa16/PHYS 721/PHYS 721 HW 04/PHYS 721 HW 04.tex" "~/Dropbox/Fa16/PHYS 721/PHYS 721 HW 04/problem1.tex" "~/Dropbox/Fa16/PHYS 721/PHYS 721 HW 04/PHYS 721 HW 04.tex" "/home/yqh/Dropbox/Fa16/PHYS 721/PHYS 721 HW 04/PHYS 721 HW 04.tex" "~/Dropbox/Fa16/PHYS 721/PHYS 721 HW 04/problem3.tex" "/home/yqh/Dropbox/Fa16/PHYS 721/PHYS 721 HW 04/PHYS 721 HW 04.tex" "~/Dropbox/Fa16/PHYS 721/PHYS 721 HW 04/problem1.tex"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/yqh/Dropbox/00-Research/FermionBag2D/Notes/FermionBag2D-Papers-Notes.org"
+  "FermionBag2D-Papers-Notes.org"
+  'org-mode
+  '(auto-fill-mode auto-complete-mode undo-tree-mode evil-org-mode evil-mc-mode guide-key-mode org-indent-mode)
+  4511
+  '(2658 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/home/yqh/.config/awesome/rc.lua"
+  "rc.lua"
+  'lua-mode
+  '(undo-tree-mode evil-mc-mode yas-minor-mode guide-key-mode highlight-indentation-mode highlight-indentation-current-column-mode linum-mode)
+  5333
+  '(6103 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/home/yqh/.config/awesome/modules/myfunctions.lua"
+  "myfunctions.lua"
+  'lua-mode
+  '(undo-tree-mode evil-mc-mode yas-minor-mode guide-key-mode highlight-indentation-mode highlight-indentation-current-column-mode linum-mode)
+  464
+  '(464 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "modules"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  465
+  '(465 nil)
+  t
+  '("/home/yqh/.config/awesome/modules/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/home/yqh/Dropbox/Personal Notes/My-Agenda.org"
+  "My-Agenda.org"
+  'org-mode
+  '(auto-complete-mode undo-tree-mode evil-org-mode evil-mc-mode guide-key-mode org-indent-mode)
+  166
+  '(166 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/home/yqh/Dropbox/Personal Notes/Food-List.org"
+  "Food-List.org"
+  'org-mode
+  '(auto-complete-mode undo-tree-mode evil-org-mode evil-mc-mode guide-key-mode org-indent-mode)
+  2079
+  '(2079 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/home/yqh/.emacs.d/org-conf.el"
+  "org-conf.el"
+  'emacs-lisp-mode
+  '(undo-tree-mode evil-mc-mode yas-minor-mode guide-key-mode highlight-indentation-mode highlight-indentation-current-column-mode linum-mode)
+  664
+  '(664 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . prefer-utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/home/yqh/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(undo-tree-mode evil-mc-mode yas-minor-mode guide-key-mode highlight-indentation-mode highlight-indentation-current-column-mode linum-mode)
+  2487
+  '(2487 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "Notes"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  260
+  '(260 nil)
+  t
+  '("/home/yqh/Dropbox/00-Research/FermionBag2D/Notes/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "FermionBag2D"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  369
+  '(369 nil)
+  t
+  '("/home/yqh/Dropbox/00-Research/FermionBag2D/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "00-Research"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  214
+  '(214 nil)
+  t
+  '("/home/yqh/Dropbox/00-Research/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "PHYS-701-HW-5-Ref"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  224
+  '(224 nil)
+  t
+  '("/home/yqh/Dropbox/Fa16/PHYS-701/PHYS-701-Homework/PHYS-701-HW-5/PHYS-701-HW-5-Ref/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "PHYS-701-HW-5"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  329
+  '(329 nil)
+  t
+  '("/home/yqh/Dropbox/Fa16/PHYS-701/PHYS-701-Homework/PHYS-701-HW-5/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "PHYS-701-Homework"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  451
+  '(451 nil)
+  t
+  '("/home/yqh/Dropbox/Fa16/PHYS-701/PHYS-701-Homework/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "PHYS-701"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  319
+  '(319 nil)
+  t
+  '("/home/yqh/Dropbox/Fa16/PHYS-701/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "PHYS-721-HW-6"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  319
+  '(319 nil)
+  t
+  '("/home/yqh/Dropbox/Fa16/PHYS-721/PHYS 721 Homework/PHYS-721-HW-6/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "PHYS 721 Homework"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  506
+  '(506 nil)
+  t
+  '("/home/yqh/Dropbox/Fa16/PHYS-721/PHYS 721 Homework/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "RAMDisk"
+  'dired-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  156
+  '(156 nil)
+  t
+  '("/home/yqh/RAMDisk/")
+  '((overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "*info*"
+  'Info-mode
+  '(undo-tree-mode evil-mc-mode guide-key-mode)
+  1442
+  '(1442 nil)
+  t
+  '("/usr/share/info/emacs-24/efaq" "Top" nil)
+  '((tab-width . 8) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t)))
+

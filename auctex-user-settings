@@ -1,0 +1,47 @@
+; ================================
+;; User Settings for AuCTeX Package
+;; ================================
+(load "auctex.el" nil t t)
+;; (load "preview-latex.el" nil t t)
+
+;; In order to get support for many of the L a TEX packages you will use in your documents,
+;; you should enable document parsing as well, which can be achieved by putting
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(add-hook 'LaTeX-mode-hook 'server-start)
+;; use Okular to view AUCTeX-generated PDFs
+;;(when (require 'latex nil t)
+;;   (push '("%(masterdir)" (lambda nil (file-truename (TeX-master-directory))))
+;;          TeX-expand-list)
+;;   (push '("Okular" "okular --unique %o#src:\'%n%(masterdir)./%b\'")
+;;          TeX-view-program-list)
+;;   (push '(output-pdf "Okular") TeX-view-program-selection))
+
+(setq TeX-view-program-selection
+    '((output-pdf "myOkular")))
+(setq TeX-view-program-list
+    '(("myOkular" "/usr/bin/okular --unique %o#src:\"%n%b\"")))
+    
+;; Set LaTeX PATH
+(setenv "PATH" (concat (getenv "PATH") ":/usr/bin:/usr/local/texlive/2016/bin/x86_64-linux"))
+(setq exec-path (append exec-path '("/usr/local/texlive/2016/bin/x86_64-linux")))
+(setq exec-path (append exec-path '("/usr/bin")))
+
+(setq TeX-arg-right-insert-p t)
+;; (TeX-add-style-hook
+;;  "latex"
+;;  (lambda ()
+;;    (LaTeX-add-environments
+;;     '("alignedeq" LaTeX-env-label)
+;;     '("bmatrix" LaTeX-env-label)    
+;;   )))
+
+;; (setq TeX-electric-sub-and-superscript t)
+
+(add-hook 'LaTeX-mode-hook 'add-my-latex-environments)
+(defun add-my-latex-environments ()
+  (LaTeX-add-environments
+   '("alignedeq" LaTeX-env-label)
+;;   '("bmatrix" LaTeX-env-array)
+   ))
