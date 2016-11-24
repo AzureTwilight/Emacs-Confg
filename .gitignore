@@ -3,3 +3,4 @@ auto-save-list/
 .emacs.desktop
 smex-items
 ac-comphist.dat
+.org-id-locations
