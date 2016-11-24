@@ -1,2 +1,5 @@
 elpa/
 auto-save-list/
+.emacs.desktop
+smex-items
+ac-comphist.dat
