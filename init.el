@@ -51,9 +51,7 @@
 (global-set-key (kbd "C-c j") 'imenu)
 (global-set-key (kbd "C-c g") 'magit-status)
 
-(set-register ?c (cons 'file "~/Dropbox/Fa16/Class Notes/Fa16 Class Notes Index.org"))
-(set-register ?e (cons 'file "~/.emacs"))
-(set-register ?f (cons 'file "~/Dropbox/Personal Notes/Food-List.org"))
+(set-register ?e (cons 'file "~/.emacs.d/init.el"))
 
 ;; Set Themes
 (if (display-graphic-p)
@@ -62,8 +60,13 @@
   (enable-theme 'tango-dark))
 
 ;; Auto-Save Files and Backups for Dropbox
-(add-to-list 'auto-save-file-name-transforms '("\\`.*/Dropbox/.*" "/tmp/" t))
-(add-to-list 'backup-directory-alist '("\\`.*/Dropbox/.*" . "/tmp/"))
+(if (eq system-type 'windows-nt)
+    ()
+    (progn
+      (add-to-list 'auto-save-file-name-transforms '("\\`.*/Dropbox/.*" "/tmp/" t))
+      (add-to-list 'backup-directory-alist '("\\`.*/Dropbox/.*" . "/tmp/"))
+      )
+  )
 
 ;; The following lines are always needed. Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -251,6 +254,7 @@
  '(custom-safe-themes
    (quote
     ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
+ '(org-agenda-files (quote ("~/Dropbox/01-Learning-Notes/My-Agenda.org")))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -258,3 +262,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; New-added
+(setq-default evil-escape-key-sequence "jk")
