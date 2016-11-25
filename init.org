@@ -49,6 +49,11 @@ Enable x-copyboard support
 ;; (global-set-key (kbd "C-c y") 'x-clipboard-yank)
 #+END_SRC
 
+Move all backup files to "./.emacsbackup"
+#+BEGIN_SRC emacs-lisp
+(setq backup-directory-alist '(("" . ".emacsbackup")))
+#+END_SRC
+
 ** UI Setup
 Disable UI element, including tool-bar, menu-bar and scroll-bar
 #+BEGIN_SRC emacs-lisp
@@ -104,48 +109,78 @@ Bind frequently-used fiels to registers
 (set-register ?e (cons 'file "~/.emacs.d/init.el"))
 #+END_SRC
 * Package Setup
-** Org
-;; ==================================
-;; === Configuration for Org-Mode === 
-;; ==================================
+** AuCTeX
+*** Initialization
+Enable AuCTeX Package:
+#+BEGIN_SRC emacs-lisp
+(load "auctex.el" nil t t)
+;; (load "preview-latex.el" nil t t)
+#+END_SRC
 
-(setq org-startup-align-all-tables t)
-;; Add "CLOSED: [timestamp]" when TODO state is DONE
-(setq org-log-done 'time)
+Global initialization setup
+#+BEGIN_SRC emacs-lisp
+;; In order to get support for many of the LaTEX packages you will use in your documents,
+;; you should enable document parsing as well, which can be achieved by putting
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(setq TeX-arg-right-insert-p t)
+#+END_SRC
 
-;; Enable org-indent-mode
-(setq org-startup-indented t)
+This may be redundant to ensure server-start
+#+BEGIN_SRC emacs-lisp
+(add-hook 'LaTeX-mode-hook 'server-start)
+#+END_SRC
 
-(require 'ox-twbs) ;; Activate ox-twbs
-(require 'org-bullets) ;; Activate Org-Bullet
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+Setup LaTeX path
+#+BEGIN_SRC emacs-lisp
+;; Set LaTeX PATH
+(setenv "PATH" (concat (getenv "PATH") ":/usr/bin:/usr/local/texlive/2016/bin/x86_64-linux"))
+(setq exec-path (append exec-path '("/usr/local/texlive/2016/bin/x86_64-linux")))
+(setq exec-path (append exec-path '("/usr/bin")))
+#+END_SRC
+*** Set View Program
 
-;; Activate org-ac
-(require 'org-ac)
+I didn't find the reason but the default okular setttings failed to support forward-searching.
+So I use the following lines to setup a new  program
+#+BEGIN_SRC emacs-lisp
+(setq TeX-view-program-selection
+    '((output-pdf "myOkular")))
+(setq TeX-view-program-list
+    '(("myOkular" "/usr/bin/okular --unique %o#src:\"%n%b\"")))
+#+END_SRC
+*** User-Defined environment
+The following functions add user-defined envrionments to AuCTeX
 
-;; Set To-Do List
-(setq org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "|" "DONE")
-			  (sequence "FOOD-OUT" "FOOD-FRIDGE" "|" "WASTED" "COOKED")
-			  (sequence "TO-READ" "READING" "|" "DONE")
-			  )
-      )
+#+BEGIN_SRC emacs-lisp
+(add-hook 'LaTeX-mode-hook 'add-my-latex-environments)
+(defun add-my-latex-environments ()
+  (LaTeX-add-environments
+   '("alignedeq" LaTeX-env-label)
+;;   '("bmatrix" LaTeX-env-array)
+   ))
+#+END_SRC
+** BS-menu
+Set global key to invoke bs-menu
+#+BEGIN_SRC emacs-lisp
+;; Bind C-x b to bs-show
+(global-set-key (kbd "C-x C-b") 'bs-show)
+#+END_SRC
 
+Bind evil-style key to BS-menu
+#+BEGIN_SRC emacs-lisp
+; BS-menu
+(defadvice bs-mode (before bs-mode-override-keybindings activate)
+  ;; use the standard bs bindings as a base
+  (evil-make-overriding-map bs-mode-map 'normal t)
+  (evil-define-key 'normal bs-mode-map "h" 'evil-backward-char)
+  (evil-define-key 'normal bs-mode-map "q" 'bs-abort)
+  (evil-define-key 'normal bs-mode-map "j" 'bs-down)
+  (evil-define-key 'normal bs-mode-map "k" 'bs-up)
+  (evil-define-key 'normal bs-mode-map "l" 'evil-forward-char)
+  (evil-define-key 'normal bs-mode-map "RET" 'bs-select))
+#+END_SRC
 
-;; If you would like a TODO entry to automatically change to DONE when all children are done, you can use the following setup:
-(defun org-summary-todo (n-done n-not-done)
-  "Switch entry to DONE when all subentries are done, to TODO otherwise."
-  (let (org-log-done org-log-states)   ; turn off logging
-    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
-
-(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
-
-;; Make config suit for you. About the config item, eval the following sexp.
-;; (customize-group "org-ac")
-
-(org-ac/config-default)
-
-;; Load Org Color Them
-;; (load-theme 'tangotango t)
 ** Evil
 *** evil-leader
 
@@ -218,10 +253,121 @@ Initial =evil-matchit=
 (require 'evil-matchit)
 (global-evil-matchit-mode 1)
 #+END_SRC
-** Smex
 ** Projectile
 ** Hightlight-Indentation
+Add hightlight-indentation-mode and highlight-indentation-current-column-mode to desired hook
+#+BEGIN_SRC emacs-lisp
+;; Activate Hightlight-Indentation
+;; (require 'hightlight-indentation)
+(add-hook 'prog-mode-hook #'highlight-indentation-mode)
+(add-hook 'prog-mode-hook #'highlight-indentation-current-column-mode)
+#+END_SRC
+
+** Org Plugins
+*** ox-twbs
+Enable ox-twbs
+#+BEGIN_SRC emacs-lisp
+(require 'ox-twbs) ;; Activate ox-twbs
+#+END_SRC
+*** org-bullets
+=org-bullets= is a beautity theme for org headings
+#+BEGIN_SRC emacs-lisp
+(require 'org-bullets) ;; Activate Org-Bullet
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+END_SRC
+*** org-ac
+Enable =org-ac= package
+#+BEGIN_SRC emacs-lisp
+(require 'org-ac)
+
+;; Make config suit for you. About the config item, eval the following sexp.
+;; (customize-group "org-ac")
+
+(org-ac/config-default)
+#+END_SRC
+
+** Org
+*** Start-up Setup
+
+Bind .org extension to org-mode
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+#+END_SRC
+
+Set global key-binding
+#+BEGIN_SRC emacs-lisp
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+;;(global-set-key (kbd "C-u C-c C-i") 'org-table-iterate-buffer-tables)
+#+END_SRC
+
+Enable start-up indent
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-indented t)
+#+END_SRC
+
+Align all tables
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-align-all-tables t)
+#+END_SRC
+
+Set Org Color Theme
+#+BEGIN_SRC emacs-lisp
+;; Load Org Color Them
+;; (load-theme 'tangotango t)
+#+END_SRC
+
+I forgot what this line is for
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+#+END_SRC
+
+*** To-DO Setup
+Automatically add "CLOSED" timestamp when TODO item is DONE
+#+BEGIN_SRC emacs-lisp
+;; This is for general TODO item.
+(setq org-log-done 'time)
+
+;; If you would like a TODO entry to automatically change to DONE when all children are done, you can use the following setup:
+(defun org-summary-todo (n-done n-not-done)
+  "Switch entry to DONE when all subentries are done, to TODO otherwise."
+  (let (org-log-done org-log-states)   ; turn off logging
+    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+#+END_SRC
+
+Customize To-Do keyword
+#+BEGIN_SRC emacs-lisp
+;; Set To-Do List
+(setq org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "|" "DONE")
+			  (sequence "FOOD-OUT" "FOOD-FRIDGE" "|" "WASTED" "COOKED")
+			  (sequence "TO-READ" "READING" "|" "DONE")
+			  )
+      )
+#+END_SRC
 ** Powerline
+** Popup
+** Smex
+Enable =Smex= package
+#+BEGIN_SRC emacs-lisp
+;; Activate Smex
+(require 'smex)   ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.
+#+END_SRC
+
+Bind =M-x= for smex, which override Emacs' default behaviour
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+#+END_SRC
+
+Rebind Emacs' default =M-x= function to =C-c C-c M-x=
+#+BEGIN_SRC emacs-lisp
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+#+END_SRC
+
 ** Yasnippet
 Initial Yasnippet
 
@@ -256,14 +402,8 @@ or we could do that on buffer basis by binding yas-minor-mode to desired hook
   )
 
 ;; The following lines are always needed. Choose your own keys.
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-;;(global-set-key (kbd "C-u C-c C-i") 'org-table-iterate-buffer-tables)
-(setq backup-directory-alist '(("" . ".emacsbackup")))
 
 (defun set-exec-path-from-shell-PATH ()
   "Sets the exec-path to the same value used by the user shell"
@@ -286,46 +426,14 @@ or we could do that on buffer basis by binding yas-minor-mode to desired hook
 ;; (require 'auto-complete)
 ;; (ac-config-default)
 
-
-; BS-menu
-(defadvice bs-mode (before bs-mode-override-keybindings activate)
-  ;; use the standard bs bindings as a base
-  (evil-make-overriding-map bs-mode-map 'normal t)
-  (evil-define-key 'normal bs-mode-map "h" 'evil-backward-char)
-  (evil-define-key 'normal bs-mode-map "q" 'bs-abort)
-  (evil-define-key 'normal bs-mode-map "j" 'bs-down)
-  (evil-define-key 'normal bs-mode-map "k" 'bs-up)
-  (evil-define-key 'normal bs-mode-map "l" 'evil-forward-char)
-  (evil-define-key 'normal bs-mode-map "RET" 'bs-select))
-
-
-;; Bind C-x b to bs-show
-(global-set-key (kbd "C-x C-b") 'bs-show)
-
-;; Activate Smex
-(require 'smex) ; Not needed if you use package.el
-(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
-                  ; when Smex is auto-initialized on its first run.
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
 ;; Activate Projectile
 ;; (require 'projectile)
 ;; (projectile-global-mode)
 ;; (setq projectile-require-project-root nil)
 
-;; Activate Hightlight-Indentation
-;; (require 'hightlight-indentation)
-(add-hook 'prog-mode-hook #'highlight-indentation-mode)
-(add-hook 'prog-mode-hook #'highlight-indentation-current-column-mode)
-
-
 ;; Activate Powerline
 ;; (require 'powerline)
 ;; (require 'cl)
-
 
 ;; (setq powerline-arrow-shape 'arrow)   ;; the default
 ;; (custom-set-faces
@@ -363,10 +471,6 @@ or we could do that on buffer basis by binding yas-minor-mode to desired hook
 ;; Enable LaTeX-Preview-Pane
 ;; (latex-preview-pane-enable)
 
-;; Setup AUCTex
-;; AucTeX User Settings
-(load-file "~/.emacs.d/auctex-user-settings")
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -397,12 +501,6 @@ or we could do that on buffer basis by binding yas-minor-mode to desired hook
     ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
  '(org-agenda-files (quote ("~/Dropbox/01-Learning-Notes/My-Agenda.org")))
  '(show-paren-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 * Unfinished Part
 
