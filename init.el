@@ -264,4 +264,5 @@
  )
 
 ;; New-added
+(evil-escape-mode)
 (setq-default evil-escape-key-sequence "jk")
