@@ -33,7 +33,10 @@
 ;; (set-default-font "Fira Mono for Powerline Regular:antialias=none")
 ;; (set-default-font "Fira Mono for Powerline:antialias=none")
 (set-face-attribute 'default nil :font "Fira Mono Medium for Powerline" )
-(set-face-attribute 'default nil :height 120)
+(if (eq system-type 'darwin)
+    (set-face-attribute 'default nil :height 160)
+    (set-face-attribute 'default nil :height 120)
+  )
 (set-frame-font "Fira Mono Medium for Powerline" nil t)
 (set-fontset-font "fontset-default" 'chinese-gbk "PingFang SC Regular")
 
@@ -42,6 +45,7 @@
 ;;		("Adobe Heiti Std R" . 1.1)
 ;;                ))
 
+(global-set-key (kbd "C-<return>") 'other-window)
 (global-set-key (kbd "C-<up>") 'windmove-up)
 (global-set-key (kbd "C-<down>") 'windmove-down)
 (global-set-key (kbd "C-<left>") 'windmove-left)
