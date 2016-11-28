@@ -266,3 +266,8 @@
 ;; New-added
 (evil-escape-mode)
 (setq-default evil-escape-key-sequence "jk")
+
+;; Use google-chrome to open link
+(setq  browse-url-browser-function 'browse-url-generic
+       browse-url-generic-program "google-chrome")
+
