@@ -45,7 +45,7 @@
 ;;		("Adobe Heiti Std R" . 1.1)
 ;;                ))
 
-(global-set-key (kbd "C-<return>") 'other-window)
+(global-set-key (kbd "C-`") 'other-window)
 (global-set-key (kbd "C-<up>") 'windmove-up)
 (global-set-key (kbd "C-<down>") 'windmove-down)
 (global-set-key (kbd "C-<left>") 'windmove-left)
