@@ -228,7 +228,7 @@
 
 ;; Setup AUCTex
 ;; AucTeX User Settings
-(load-file "~/.emacs.d/auctex-user-settings")
+;; (load-file "~/.emacs.d/auctex-user-settings")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -270,8 +270,10 @@
 ;; New-added
 (evil-escape-mode)
 (setq-default evil-escape-key-sequence "jk")
+(global-set-key (kbd "C-c C-g") 'evil-escape)
 
 ;; Use google-chrome to open link
 (setq  browse-url-browser-function 'browse-url-generic
        browse-url-generic-program "google-chrome")
 
+(setq-default indent-tabs-mode nil)

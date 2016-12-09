@@ -39,3 +39,6 @@
 
 ;; Load Org Color Them
 ;; (load-theme 'tangotango t)
+
+(setq org-src-preserve-indentation nil 
+      org-edit-src-content-indentation 0)
