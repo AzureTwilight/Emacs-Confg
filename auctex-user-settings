@@ -9,7 +9,7 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
-(add-hook 'LaTeX-mode-hook 'server-start)
+;; (add-hook 'LaTeX-mode-hook 'server-start)
 ;; use Okular to view AUCTeX-generated PDFs
 ;;(when (require 'latex nil t)
 ;;   (push '("%(masterdir)" (lambda nil (file-truename (TeX-master-directory))))
@@ -25,6 +25,7 @@
     
 ;; Set LaTeX PATH
 (setenv "PATH" (concat (getenv "PATH") ":/usr/bin:/usr/local/texlive/2016/bin/x86_64-linux"))
+(setq exec-path (append exec-path (getenv "PATH")))
 (setq exec-path (append exec-path '("/usr/local/texlive/2016/bin/x86_64-linux")))
 (setq exec-path (append exec-path '("/usr/bin")))
 

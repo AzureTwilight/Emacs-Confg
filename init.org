@@ -129,7 +129,7 @@ Global initialization setup
 
 This may be redundant to ensure server-start
 #+BEGIN_SRC emacs-lisp
-(add-hook 'LaTeX-mode-hook 'server-start)
+;; (add-hook 'LaTeX-mode-hook 'server-start)
 #+END_SRC
 
 Setup LaTeX path
