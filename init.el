@@ -46,6 +46,7 @@
 ;;                ))
 
 (global-set-key (kbd "C-`") 'other-window)
+(global-set-key (kbd "C-~") (lambda () (interactive (other-window -1))))
 (global-set-key (kbd "C-<up>") 'windmove-up)
 (global-set-key (kbd "C-<down>") 'windmove-down)
 (global-set-key (kbd "C-<left>") 'windmove-left)
@@ -258,7 +259,9 @@
  '(custom-safe-themes
    (quote
     ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
- '(org-agenda-files (quote ("~/Dropbox/01-Learning-Notes/My-Agenda.org")))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/02-Personal-Notes/00-MyStudy.org" "~/Dropbox/02-Personal-Notes/00-MyLife.org")))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
